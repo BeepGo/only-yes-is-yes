@@ -143,6 +143,20 @@
     .stigma-banner p{max-width:810px;font-size:1.08rem;position:relative}
     .stigma-points{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.4rem;position:relative}
     .stigma-points div{background:rgba(255,255,255,.78);border-radius:16px;padding:1rem;font-weight:750}
+    .badge-row{display:flex;flex-wrap:wrap;gap:.55rem;margin:1.15rem 0 0}
+    .badge-row span{display:inline-flex;align-items:center;gap:.4rem;background:var(--navy-900);color:white;border-radius:999px;padding:.42rem .72rem;font-size:.86rem;font-weight:850;box-shadow:0 7px 18px rgba(3,26,49,.10)}
+    .badge-row span:nth-child(2n){background:var(--orange);color:#251000}.badge-row span:nth-child(3n){background:var(--lime);color:var(--navy-950)}
+    .furry-divider{display:flex;align-items:center;gap:1rem;margin:2.3rem 0 1.5rem;color:var(--navy-800)}
+    .furry-divider:before,.furry-divider:after{content:"";height:2px;flex:1;background:linear-gradient(90deg,transparent,var(--navy-800))}.furry-divider:after{background:linear-gradient(90deg,var(--navy-800),transparent)}
+    .furry-divider svg{width:58px;height:42px;flex:0 0 auto}
+    .soft-panel{margin-top:2rem;background:linear-gradient(145deg,#fff,#f8fbdc);border:1px solid rgba(8,43,82,.12);border-radius:26px;padding:clamp(1.25rem,3vw,2rem);box-shadow:0 12px 32px rgba(3,26,49,.07)}
+    .soft-panel h3{font-size:clamp(1.35rem,2.3vw,1.8rem)}.soft-panel p:last-child{margin-bottom:0}
+    .med-warning{margin-top:1rem;border-left:5px solid var(--danger);background:var(--danger-soft);padding:1rem 1.15rem;border-radius:0 16px 16px 0;color:#6f2c2c}
+    .interest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.35rem}
+    .interest-card{background:white;border:1px solid rgba(8,43,82,.11);border-radius:22px;padding:1.3rem;position:relative;overflow:hidden}
+    .interest-card:after{content:"";position:absolute;width:64px;height:64px;background:var(--lime);opacity:.23;border-radius:50%;right:-22px;bottom:-22px}
+    .interest-card .word{font-weight:950;color:var(--orange-dark);font-size:1.1rem;margin-bottom:.45rem}
+    .interest-card p{margin:0;color:var(--muted)}
     .resources-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
     .resource-card{display:flex;flex-direction:column;gap:.75rem;background:white;border:1px solid rgba(8,43,82,.12);border-radius:22px;padding:1.35rem;text-decoration:none;color:var(--ink);transition:.18s transform,.18s box-shadow}
     .resource-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(3,26,49,.1);color:var(--ink)}
@@ -175,7 +189,7 @@
       .hero{padding-top:4rem}
       .hero-grid{grid-template-columns:1fr}
       .hero-card{max-width:620px;transform:none}
-      .why-grid,.tools-grid,.pressure-grid,.stigma-points{grid-template-columns:1fr 1fr}
+      .why-grid,.tools-grid,.pressure-grid,.stigma-points,.interest-grid{grid-template-columns:1fr 1fr}
       .consent-grid{grid-template-columns:repeat(2,1fr)}
       .consent-principle:last-child{grid-column:span 2}
       .urgent{grid-template-columns:auto 1fr}.urgent .button{grid-column:1/-1}
@@ -190,7 +204,7 @@
       .hero{padding:3.3rem 1rem 3.8rem}
       h1{font-size:clamp(2.75rem,16vw,4.2rem)}
       main section{padding:4rem 1rem}
-      .why-grid,.scenario-grid,.tools-grid,.pressure-grid,.stigma-points,.resources-grid{grid-template-columns:1fr}
+      .why-grid,.scenario-grid,.tools-grid,.pressure-grid,.stigma-points,.resources-grid,.interest-grid{grid-template-columns:1fr}
       .consent-grid{grid-template-columns:1fr}.consent-principle:last-child{grid-column:auto}
       .statement{grid-template-columns:1fr}.statement-icon{width:46px;height:46px}
       .urgent{grid-template-columns:1fr}.urgent .clock{font-size:2rem}
@@ -214,7 +228,7 @@
         <span>Only Yes Is Yes</span>
       </a>
       <div class="nav-links">
-        <a href="#why">為什麼談</a><a href="#consent">同意</a><a href="#health">性健康</a><a href="#pressure">角色壓力</a><a href="#after">發生之後</a><a href="#resources">求助資源</a>
+        <a href="#why">為什麼談</a><a href="#consent">同意</a><a href="#health">性健康</a><a href="#pressure">角色壓力</a><a href="#normal-sex">性趣與探索</a><a href="#after">發生之後</a><a href="#resources">求助資源</a>
       </div>
     </div>
   </nav>
@@ -292,11 +306,12 @@
         <div class="section-kicker">Combination prevention</div>
         <h2>性健康不是只有「戴或不戴」</h2>
         <p class="section-intro">保險套仍然重要，但真實世界需要的是組合防護。不同工具負責不同風險，沒有任何一項是全包式無敵星星。</p>
-        <div class="tools-grid">
+        <div class="callout"><strong>簡單記：</strong>保險套是基礎工具，PrEP 預防的是 HIV，PEP 是 HIV 暴露後的緊急處理；Doxy-PEP 主要針對梅毒與披衣菌等細菌性性傳染病，對淋病的效果則容易受到抗藥性影響。不同工具防的東西不同，搭配使用才更完整。</div>
+        <div class="tools-grid" style="margin-top:1.3rem">
           <article class="tool-card"><div class="abbr">套＋潤滑</div><h3>保險套與相容潤滑液</h3><p>能降低 HIV 與多種性傳染病風險，也可減少摩擦與黏膜受傷。</p><p class="fine">乳膠保險套避免搭配油性潤滑品；使用前確認尺寸、效期與包裝完整。</p></article>
           <article class="tool-card"><div class="abbr">PrEP</div><h3>HIV 暴露前預防</h3><p>在可能接觸 HIV 前使用的預防藥物，需要先檢驗並由醫師評估、追蹤。</p><p class="fine">PrEP 預防的是 HIV，不會預防梅毒、淋病、披衣菌或其他感染。</p></article>
           <article class="tool-card"><div class="abbr">PEP</div><h3>HIV 暴露後緊急處置</h3><p>可能暴露 HIV 後，應盡快至提供 PEP 的醫療院所接受風險評估。</p><p class="fine">疾管署建議 72 小時內開始，24 小時內最佳，並依醫囑持續 28 天。</p></article>
-          <article class="tool-card"><div class="abbr">Doxy-PEP</div><h3>部分細菌性 STI 的暴露後預防</h3><p>是處方抗生素策略，不是自行囤藥、每次性交後隨意服用。</p><p class="fine">適用性、交互作用與抗藥性需要醫師共同評估；它不預防 HIV 或病毒性 STI。</p></article>
+          <article class="tool-card"><div class="abbr">Doxy-PEP</div><h3>細菌性性傳染病的暴露後預防</h3><p>Doxy-PEP 是在性行為後使用的抗生素策略，主要用來降低<strong>梅毒與披衣菌感染</strong>的風險；對<strong>淋病</strong>的效果較不穩定，也容易受到抗藥性影響。</p><p class="fine">它不預防 HIV、HPV、皰疹或其他病毒性 STI，也不是每個人都適合自行使用。適用性、用法、交互作用與抗藥性風險，應與醫師討論。</p></article>
           <article class="tool-card"><div class="abbr">疫苗</div><h3>先把能預防的風險擋下來</h3><p>可向醫療人員確認 HPV、A／B 型肝炎及 mpox 等疫苗是否適合自己。</p><p class="fine">接種條件、費用與公費資格可能改變，請以當下官方公告與醫療評估為準。</p></article>
           <article class="tool-card"><div class="abbr">篩檢</div><h3>採檢部位要跟行為對得上</h3><p>喉嚨、肛門、尿液／尿道與血液可能檢查不同感染；沒有症狀也可能感染。</p><p class="fine">就醫時如實告知發生過哪些行為與接觸部位，能幫助醫療人員安排合適採檢。</p></article>
         </div>
@@ -318,6 +333,31 @@
           <article class="pressure-card"><h3>高潮不是債務</h3><p>對方射了，不代表你欠他一次高潮、口交、被插或任何交換。沒有高潮，也不代表這次互動沒有價值。</p></article>
           <article class="pressure-card"><h3>Side 不是次等選項</h3><p>不做肛交、臨時改變角色或只想做部分互動，都是完整而有效的選擇，不需要被升級或修正。</p></article>
         </div>
+        <div class="furry-divider" aria-hidden="true"><svg viewBox="0 0 90 62" fill="none"><path d="M44 58V30M44 35L27 19M27 19L13 22M27 19L25 6M46 35L63 19M63 19L77 22M63 19L65 6" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M36 53Q45 61 54 53" stroke="#f27718" stroke-width="6" stroke-linecap="round"/></svg></div>
+
+        <div class="soft-panel">
+          <h3>想玩，不代表沒有壓力</h3>
+          <p>有些人不是不想玩，也不是不喜歡對方，而是會擔心自己今天能不能進入狀態、能不能穩定擔任這個角色、會不會讓對方失望。這種壓力很常見，它不代表你不夠有吸引力，也不代表你不夠喜歡對方。</p>
+          <p>真正卡住的，往往不是「要不要做」，而是「我想玩，但我怕自己做不好」「我怕一說出壓力，對方就以為我不喜歡他」。比起硬撐到最後，能誠實說出自己現在的狀態，反而更能保護彼此。</p>
+          <div class="badge-row"><span>想要與焦慮可以同時存在</span><span>說出壓力不等於拒絕</span><span>角色可以隨時調整</span></div>
+        </div>
+
+        <h3 style="margin-top:2.2rem">不知道怎麼開口時，可以這樣說</h3>
+        <div class="scenario-grid" style="margin-top:1rem">
+          <article class="scenario"><span class="label">表達狀態</span><h3>「我其實有想，但我有點擔心我今天不一定能穩定當 1。」</h3><p class="better"><strong>重點：</strong>把性慾和表現能力分開說，對方比較不會把你的焦慮誤解成不喜歡他。</p></article>
+          <article class="scenario"><span class="label">避免誤會</span><h3>「不是因為我不喜歡你，比較像是我對自己的表現有點壓力。」</h3><p class="better"><strong>重點：</strong>你可以很喜歡對方，同時也對自己的角色、勃起或持久感到不安。</p></article>
+          <article class="scenario"><span class="label">保留彈性</span><h3>「我想玩，但如果狀態不對，我希望我們可以換方式或停下來。」</h3><p class="better"><strong>重點：</strong>提前說出彈性，能讓改變角色、改做 Side 或停止都更自然。</p></article>
+          <article class="scenario"><span class="label">還在摸索</span><h3>「我對這件事有興趣，只是我還在摸索自己適不適合這個角色。」</h3><p class="better"><strong>重點：</strong>不確定不是掃興，而是認真對待自己的界線與身體。</p></article>
+        </div>
+
+        <div class="soft-panel">
+          <h3>性表現輔助，不代表你比較差</h3>
+          <p>有些人會使用西地那非（常見商品名如威而鋼）、他達拉非（常見商品名如犀利士）等勃起功能相關藥物，來幫助自己在想玩的情況下，減少對表現的焦慮。這不代表你不夠自然，也不代表你有什麼見不得人的問題。</p>
+          <p>對某些人來說，這只是照顧身體狀態與性愛經驗的一種工具。需要時向醫師或藥師詢問用法、副作用、禁忌與交互作用，是照顧自己，不是失敗。</p>
+          <div class="med-warning"><strong>重要安全提醒：</strong>西地那非、他達拉非等 PDE5 抑制劑不可與硝酸鹽類心臟藥物，或俗稱 poppers 的亞硝酸酯類物質併用，可能造成危險的低血壓。不要購買來源不明、成分未標示的「壯陽」產品。</div>
+          <div class="badge-row"><span>尋求協助不是失敗</span><span>藥物也可以被自然討論</span></div>
+        </div>
+
         <h3 style="margin-top:2.2rem">失望可以表達，但不要把失望變成壓力</h3>
         <div class="swap">
           <div class="bubble">「我都射了，你怎麼還沒射？你是不是不喜歡我？」</div>
@@ -350,6 +390,25 @@
           <p>負責任，是願意篩檢、接受治療、遵從醫療建議、在需要時通知可能受影響的人。羞辱、公開獵巫與把感染者當成骯髒的人，並不會讓社群更安全，只會讓更多人害怕篩檢、告知與求助。</p>
           <div class="stigma-points"><div>願意告知，需要勇氣與安全感。</div><div>不知道感染來源時，不要自行拼湊犯人。</div><div>支持治療與 U=U，比流言更能中斷傳播。</div></div>
         </div>
+      </div>
+    </section>
+
+    <section id="normal-sex">
+      <div class="section-inner">
+        <div class="section-kicker">No single normal</div>
+        <h2>沒有所謂唯一正常的性愛</h2>
+        <p class="section-intro">不需要急著把自己的性喜好分成「正常」或「不正常」。真正重要的，不是符合某種標準模板，而是理解自己的界線、偏好、好奇與安全感需求。</p>
+        <div class="statement">
+          <div class="statement-icon" aria-hidden="true">◎</div>
+          <p>只要是在<strong>安全、合法、合意</strong>，而且所有參與者都具備積極同意的前提下，你喜歡怎麼互動、怎麼探索、怎麼感到快樂，本來就可以是你自己的樣子。有人喜歡 1，有人喜歡 0，有人喜歡 Side；有人喜歡溫柔的互動，也有人喜歡權力交換、情境扮演或其他玩法。這些都不需要先被某個外在標準審判，才有存在資格。</p>
+        </div>
+        <div class="interest-grid">
+          <article class="interest-card"><div class="word">界線</div><p>知道自己不要什麼，和知道自己想要什麼一樣重要。界線不必固定，也可以隨經驗改變。</p></article>
+          <article class="interest-card"><div class="word">偏好</div><p>偏好不是一張終身身分證。你可以喜歡、嘗試、暫停，也可以後來發現這不是自己想要的。</p></article>
+          <article class="interest-card"><div class="word">探索</div><p>好奇不代表一定要實踐；實踐也不代表必須再次進行。每一步都可以重新選擇。</p></article>
+        </div>
+        <div class="callout" style="margin-top:1.4rem"><strong>不要急著因為自己的性趣而羞辱自己。</strong>更自在地理解與擁抱自己的性，本來就是一輩子的課題。</div>
+        <div class="badge-row"><span>沒有唯一正確腳本</span><span>喜歡不等於義務</span><span>探索也可以停下</span></div>
       </div>
     </section>
 
@@ -387,7 +446,7 @@
         <p>這不是一個教大家如何約炮的網站，也不是一個要求大家不要做愛的網站。它承認性愛真實存在，並希望大家更安全、更自在，也更尊重彼此。</p>
         <p>由台灣獸圈成員自主發起與整理。內容以男男性行為情境為主要案例，所有性別與性傾向皆可閱讀。</p>
         <p><strong>醫療提醒：</strong>本頁提供一般性健康資訊，不能取代個別診斷、處方與專業評估。</p>
-        <span class="update">內容查核：2026 年 7 月 14 日</span>
+        <span class="update">內容修訂：2026 年 7 月 14 日</span>
       </div>
       <div>
         <h3>主要資料來源</h3>
@@ -395,7 +454,7 @@
           <li><a href="https://www.cdc.gov.tw/Category/MPage/tXBKgpeVZ9l9929TEdZGJw" target="_blank" rel="noopener">疾管署：PrEP</a></li>
           <li><a href="https://www.cdc.gov.tw/Category/MPage/uo89XT3izngK6IY0wv8BNg" target="_blank" rel="noopener">疾管署：PEP</a></li>
           <li><a href="https://www.cdc.gov.tw/Category/MPage/gH7NyWhq3ulASakaq5DDIQ" target="_blank" rel="noopener">疾管署：匿名諮詢與篩檢</a></li>
-          <li><a href="https://www.cdc.gov.tw/Category/MPage/IkGMkgwLoqNZ76_pSla7hg" target="_blank" rel="noopener">疾管署：性健康友善門診</a></li>
+          <li><a href="https://www.cdc.gov.tw/Category/MPage/IkGMkgwLoqNZ76_pSla7hg" target="_blank" rel="noopener">疾管署：性健康友善門診</a></li><li><a href="https://www.cdc.gov.tw/Uploads/b2a9a2c1-bd2f-4ef1-9a54-d7717c50d068.pdf" target="_blank" rel="noopener">疾管署：Doxy-PEP 使用建議</a></li>
         </ul>
       </div>
     </div>
