@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082b52">
+  <meta name="description" content="給台灣成年獸圈成員的同意、性健康、角色壓力與去污名資訊。Only Yes Is Yes：只有明確而自由的願意，才是同意。">
+  <meta property="og:title" content="Only Yes Is Yes｜親密互動中的同意、性健康與角色壓力">
+  <meta property="og:description" content="承認性愛真實存在，讓我們更安全、更自在，也更尊重彼此。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <title>Only Yes Is Yes｜親密互動中的同意、性健康與角色壓力</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --navy-950:#031a31;
+      --navy-900:#082b52;
+      --navy-800:#0c3f73;
+      --orange:#f27718;
+      --orange-dark:#bd4d00;
+      --lime:#c7df16;
+      --lime-soft:#eff7a8;
+      --cream:#fffaf0;
+      --paper:#fffdf8;
+      --ink:#17202a;
+      --muted:#586675;
+      --line:#d9e0e7;
+      --danger:#a62e2e;
+      --danger-soft:#fff0ec;
+      --shadow:0 20px 60px rgba(3,26,49,.12);
+      --radius:24px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 8% 8%, rgba(199,223,22,.18), transparent 23rem),
+        radial-gradient(circle at 88% 4%, rgba(242,119,24,.13), transparent 28rem),
+        var(--cream);
+      font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+      line-height:1.75;
+      text-rendering:optimizeLegibility;
+    }
+    a{color:var(--navy-800);text-underline-offset:3px}
+    a:hover{color:var(--orange-dark)}
+    button,a{touch-action:manipulation}
+    .skip-link{position:absolute;left:-9999px;top:8px;background:white;padding:.7rem 1rem;border-radius:10px;z-index:999}
+    .skip-link:focus{left:12px}
+    .adult-strip{
+      background:var(--navy-950);color:white;padding:.55rem 1rem;text-align:center;font-size:.9rem;letter-spacing:.02em
+    }
+    .adult-strip strong{color:var(--lime)}
+    .site-nav{
+      position:sticky;top:0;z-index:50;background:rgba(255,250,240,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(8,43,82,.12)
+    }
+    .nav-inner{max-width:var(--max);margin:auto;min-height:68px;padding:0 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--navy-950);font-weight:900;letter-spacing:-.02em}
+    .brand-mark{width:38px;height:38px;display:grid;place-items:center;background:var(--navy-900);border-radius:13px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.12)}
+    .brand-mark svg{width:26px;height:26px}
+    .nav-links{display:flex;gap:.35rem;align-items:center;overflow:auto;white-space:nowrap;scrollbar-width:none}
+    .nav-links::-webkit-scrollbar{display:none}
+    .nav-links a{text-decoration:none;font-weight:700;font-size:.92rem;color:var(--navy-900);padding:.45rem .65rem;border-radius:999px}
+    .nav-links a:hover,.nav-links a.active{background:var(--navy-900);color:white}
+    .hero{position:relative;overflow:hidden;padding:6.5rem 1.25rem 5rem}
+    .hero:before,.hero:after{content:"";position:absolute;pointer-events:none;opacity:.18;border:14px solid var(--navy-800);border-bottom:0;width:150px;height:170px;top:20px}
+    .hero:before{left:-20px;transform:rotate(-22deg);border-radius:60% 15% 0 0}
+    .hero:after{right:-20px;transform:scaleX(-1) rotate(-22deg);border-radius:60% 15% 0 0}
+    .hero-grid{max-width:var(--max);margin:auto;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:3rem;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;background:var(--lime-soft);border:1px solid rgba(8,43,82,.12);border-radius:999px;padding:.45rem .8rem;font-weight:800;color:var(--navy-900);font-size:.9rem}
+    .eyebrow:before{content:"18+";display:grid;place-items:center;width:32px;height:24px;background:var(--navy-900);color:white;border-radius:8px;font-size:.72rem}
+    h1,h2,h3{line-height:1.16;margin-top:0;color:var(--navy-950)}
+    h1{font-size:clamp(3rem,7vw,6.4rem);letter-spacing:-.065em;margin:.85rem 0 .7rem;max-width:900px}
+    h1 .yes{color:var(--orange);text-shadow:4px 4px 0 rgba(199,223,22,.55)}
+    .subtitle{font-size:clamp(1.25rem,2.4vw,2rem);font-weight:900;color:var(--navy-800);margin:0 0 1.35rem}
+    .lead{font-size:clamp(1.06rem,1.5vw,1.25rem);max-width:760px;color:#344352;margin:0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;text-decoration:none;font-weight:900;padding:.85rem 1.1rem;border-radius:14px;border:2px solid var(--navy-900);transition:.18s transform,.18s box-shadow,.18s background}
+    .button:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(8,43,82,.16)}
+    .button.primary{background:var(--navy-900);color:white}
+    .button.secondary{background:transparent;color:var(--navy-900)}
+    .hero-card{position:relative;background:var(--navy-900);color:white;border-radius:32px;padding:2rem;box-shadow:var(--shadow);transform:rotate(1.5deg)}
+    .hero-card:before{content:"";position:absolute;inset:10px;border:2px dashed rgba(199,223,22,.46);border-radius:24px;pointer-events:none}
+    .hero-card .quote{font-size:clamp(1.55rem,3vw,2.35rem);line-height:1.25;font-weight:950;letter-spacing:-.035em;margin:0 0 1rem;position:relative}
+    .hero-card .quote strong{color:var(--lime)}
+    .hero-card p{position:relative;margin:0;color:#dbe7f5}
+    .mini-tags{position:relative;display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.25rem}
+    .mini-tags span{border:1px solid rgba(255,255,255,.28);padding:.3rem .6rem;border-radius:999px;font-size:.82rem}
+    main section{padding:5.5rem 1.25rem}
+    .section-inner{max-width:var(--max);margin:auto}
+    .section-kicker{font-weight:950;color:var(--orange-dark);letter-spacing:.08em;text-transform:uppercase;font-size:.82rem;margin-bottom:.55rem}
+    h2{font-size:clamp(2rem,4vw,3.6rem);letter-spacing:-.045em;margin-bottom:1rem}
+    h3{font-size:1.28rem;margin-bottom:.55rem}
+    .section-intro{max-width:790px;color:var(--muted);font-size:1.08rem;margin:0 0 2.2rem}
+    .statement{display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:start;background:var(--paper);border:1px solid rgba(8,43,82,.12);border-radius:var(--radius);padding:1.5rem;box-shadow:0 12px 35px rgba(3,26,49,.07)}
+    .statement-icon{width:54px;height:54px;background:var(--lime);border-radius:18px;display:grid;place-items:center;font-size:1.6rem;font-weight:950;color:var(--navy-950)}
+    .statement p{margin:0;font-size:1.12rem}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.25rem}
+    .why-card{background:white;border-radius:20px;padding:1.3rem;border:1px solid rgba(8,43,82,.1)}
+    .why-card .num{font-weight:950;color:var(--orange);font-size:1.9rem;line-height:1}
+    .why-card p{margin:.65rem 0 0;color:var(--muted)}
+    .dark-section{background:var(--navy-950);color:white;position:relative;overflow:hidden}
+    .dark-section h2,.dark-section h3{color:white}
+    .dark-section .section-intro{color:#c7d5e4}
+    .consent-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem;margin-top:2rem}
+    .consent-principle{min-height:180px;border-radius:20px;padding:1.2rem;background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.14)}
+    .consent-principle .letter{display:grid;place-items:center;width:46px;height:46px;border-radius:16px;background:var(--lime);color:var(--navy-950);font-size:1.35rem;font-weight:950;margin-bottom:1rem}
+    .consent-principle p{color:#cbd9e7;margin:0;font-size:.94rem}
+    .callout{margin-top:1.2rem;border-left:5px solid var(--orange);background:rgba(242,119,24,.11);padding:1.05rem 1.2rem;border-radius:0 16px 16px 0}
+    .callout strong{color:var(--lime)}
+    .scenario-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem}
+    .scenario{background:white;border-radius:22px;padding:1.35rem;border:1px solid rgba(8,43,82,.12);box-shadow:0 8px 24px rgba(3,26,49,.05)}
+    .scenario .label{display:inline-block;background:var(--navy-900);color:white;border-radius:999px;padding:.25rem .58rem;font-size:.78rem;font-weight:800;margin-bottom:.8rem}
+    .scenario .not{color:var(--danger);font-weight:900}
+    .scenario .better{border-top:1px dashed var(--line);margin-top:.9rem;padding-top:.9rem;color:var(--navy-800)}
+    .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .tool-card{background:var(--paper);border-radius:22px;padding:1.35rem;border:1px solid rgba(8,43,82,.12);position:relative;overflow:hidden}
+    .tool-card:before{content:"";position:absolute;width:76px;height:76px;border-radius:50%;right:-28px;top:-28px;background:var(--lime);opacity:.42}
+    .tool-card .abbr{font-size:1.85rem;font-weight:950;color:var(--orange);line-height:1;margin-bottom:.65rem}
+    .tool-card p{margin:.45rem 0;color:var(--muted)}
+    .tool-card .fine{font-size:.88rem;color:#6f7880}
+    .urgent{margin:2rem 0;background:var(--danger-soft);border:2px solid #f0a59a;border-radius:24px;padding:1.5rem;display:grid;grid-template-columns:auto 1fr auto;gap:1.25rem;align-items:center}
+    .urgent .clock{font-size:2.8rem}
+    .urgent h3{color:#721f1f;margin:0 0 .35rem}
+    .urgent p{margin:0;color:#6f2c2c}
+    .pressure-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .pressure-card{border-radius:22px;background:white;padding:1.35rem;border-top:7px solid var(--orange);box-shadow:0 10px 28px rgba(3,26,49,.07)}
+    .pressure-card:nth-child(2){border-top-color:var(--lime)}
+    .pressure-card:nth-child(3){border-top-color:var(--navy-800)}
+    .swap{display:grid;grid-template-columns:1fr auto 1fr;gap:.9rem;align-items:center;margin-top:1rem}
+    .swap .bubble{padding:1rem;border-radius:18px;background:#f4f6f8;color:#424f5b}
+    .swap .bubble.good{background:#eff7a8;color:var(--navy-950);font-weight:700}
+    .swap .arrow{font-size:1.4rem;color:var(--orange);font-weight:950}
+    .steps{counter-reset:steps;display:grid;gap:.85rem;margin-top:1.5rem}
+    .step{counter-increment:steps;display:grid;grid-template-columns:54px 1fr;gap:1rem;align-items:start;background:white;border:1px solid rgba(8,43,82,.11);border-radius:20px;padding:1.1rem}
+    .step:before{content:counter(steps);width:48px;height:48px;display:grid;place-items:center;border-radius:16px;background:var(--navy-900);color:white;font-weight:950;font-size:1.25rem}
+    .step p{margin:.35rem 0 0;color:var(--muted)}
+    .stigma-banner{background:linear-gradient(135deg,var(--orange),#ff9d30);color:#211300;border-radius:30px;padding:clamp(1.5rem,4vw,3.2rem);box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .stigma-banner:after{content:"";position:absolute;width:240px;height:240px;border:28px solid rgba(255,255,255,.22);border-radius:50%;right:-70px;bottom:-110px}
+    .stigma-banner h2{color:#211300;max-width:780px}
+    .stigma-banner p{max-width:810px;font-size:1.08rem;position:relative}
+    .stigma-points{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.4rem;position:relative}
+    .stigma-points div{background:rgba(255,255,255,.78);border-radius:16px;padding:1rem;font-weight:750}
+    .resources-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+    .resource-card{display:flex;flex-direction:column;gap:.75rem;background:white;border:1px solid rgba(8,43,82,.12);border-radius:22px;padding:1.35rem;text-decoration:none;color:var(--ink);transition:.18s transform,.18s box-shadow}
+    .resource-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(3,26,49,.1);color:var(--ink)}
+    .resource-top{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .resource-card h3{margin:0}
+    .resource-card .go{display:grid;place-items:center;min-width:38px;height:38px;border-radius:13px;background:var(--navy-900);color:white;font-weight:950}
+    .resource-card p{margin:0;color:var(--muted)}
+    .resource-card .source{font-size:.82rem;color:var(--orange-dark);font-weight:800}
+    .phone-card{background:var(--navy-900);color:white;border-radius:22px;padding:1.4rem;display:flex;justify-content:space-between;gap:1rem;align-items:center;margin-top:1rem}
+    .phone-card h3{color:white;margin:0}
+    .phone-card p{margin:.3rem 0 0;color:#d6e2ef}
+    .phone-card a{font-size:1.55rem;font-weight:950;color:var(--lime);text-decoration:none;white-space:nowrap}
+    .future{background:linear-gradient(160deg,#f7fbd4,white);border:1px solid rgba(8,43,82,.12);border-radius:30px;padding:clamp(1.5rem,4vw,3rem);display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
+    .future h2{font-size:clamp(1.8rem,3.6vw,3rem);margin-bottom:.7rem}
+    .future p{margin:0;color:var(--muted);max-width:760px}
+    .antler-mark{width:150px;height:120px;opacity:.9}
+    footer{background:var(--navy-950);color:#cfdae5;padding:3rem 1.25rem}
+    .footer-inner{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.3fr .7fr;gap:2rem}
+    footer h3{color:white}
+    footer p{margin:.4rem 0;color:#b8c7d5}
+    footer a{color:var(--lime)}
+    .source-list{margin:0;padding-left:1.2rem;font-size:.9rem}
+    .source-list li{margin-bottom:.4rem}
+    .update{display:inline-flex;margin-top:1rem;border:1px solid rgba(255,255,255,.22);padding:.35rem .65rem;border-radius:999px;font-size:.82rem}
+    .back-top{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border:0;border-radius:16px;background:var(--navy-900);color:white;box-shadow:0 10px 26px rgba(3,26,49,.22);font-size:1.15rem;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(10px);transition:.2s}
+    .back-top.show{opacity:1;pointer-events:auto;transform:none}
+    .mobile-note{display:none}
+    @media (max-width:900px){
+      .nav-links{display:none}
+      .hero{padding-top:4rem}
+      .hero-grid{grid-template-columns:1fr}
+      .hero-card{max-width:620px;transform:none}
+      .why-grid,.tools-grid,.pressure-grid,.stigma-points{grid-template-columns:1fr 1fr}
+      .consent-grid{grid-template-columns:repeat(2,1fr)}
+      .consent-principle:last-child{grid-column:span 2}
+      .urgent{grid-template-columns:auto 1fr}.urgent .button{grid-column:1/-1}
+      .future{grid-template-columns:1fr}.antler-mark{display:none}
+      .footer-inner{grid-template-columns:1fr}
+      .mobile-note{display:block;font-size:.8rem;color:var(--muted)}
+    }
+    @media (max-width:620px){
+      body{line-height:1.7}
+      .adult-strip{font-size:.82rem}
+      .brand span:last-child{font-size:.93rem}
+      .hero{padding:3.3rem 1rem 3.8rem}
+      h1{font-size:clamp(2.75rem,16vw,4.2rem)}
+      main section{padding:4rem 1rem}
+      .why-grid,.scenario-grid,.tools-grid,.pressure-grid,.stigma-points,.resources-grid{grid-template-columns:1fr}
+      .consent-grid{grid-template-columns:1fr}.consent-principle:last-child{grid-column:auto}
+      .statement{grid-template-columns:1fr}.statement-icon{width:46px;height:46px}
+      .urgent{grid-template-columns:1fr}.urgent .clock{font-size:2rem}
+      .swap{grid-template-columns:1fr}.swap .arrow{transform:rotate(90deg);justify-self:center}
+      .phone-card{align-items:flex-start;flex-direction:column}.phone-card a{font-size:1.35rem}
+      .hero-actions .button{width:100%}
+    }
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+    @media print{.site-nav,.back-top,.hero-actions{display:none}.hero,main section{padding:2rem 0}.dark-section{background:white;color:black}.dark-section h2,.dark-section h3{color:var(--navy-950)}.dark-section .section-intro,.consent-principle p{color:var(--muted)}.consent-principle{border:1px solid var(--line);background:white}.adult-strip{background:white;color:black;border-bottom:1px solid #ccc}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至主要內容</a>
+  <div class="adult-strip"><strong>成年性健康資訊</strong>｜內容將具體提及性行為、性傳染病與相關藥物</div>
+  <nav class="site-nav" aria-label="主要導覽">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="回到頁首">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none"><path d="M31 54V27M31 31L18 19M18 19L9 21M18 19L16 9M33 31L46 19M46 19L55 21M46 19L48 9" stroke="#c7df16" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>Only Yes Is Yes</span>
+      </a>
+      <div class="nav-links">
+        <a href="#why">為什麼談</a><a href="#consent">同意</a><a href="#health">性健康</a><a href="#pressure">角色壓力</a><a href="#after">發生之後</a><a href="#resources">求助資源</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">給台灣成年獸圈成員的社群健康資訊</span>
+        <h1>Only <span class="yes">Yes</span><br>Is Yes.</h1>
+        <p class="subtitle">親密互動中的同意、性健康與角色壓力</p>
+        <p class="lead">性愛可以是愉快、自由且彼此尊重的經驗。誠實談論同意、風險與壓力，不是把性愛變得可怕，而是讓我們更有能力照顧自己與彼此。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#consent">先從同意開始 ↓</a>
+          <a class="button secondary" href="#resources">直接找求助資源</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="核心主張">
+        <p class="quote">只有明確、自由且持續的<strong>願意</strong>，才是同意。</p>
+        <p>角色不是契約，高潮不是義務；同意也不是進入房間後永久有效的通行證。</p>
+        <div class="mini-tags"><span>可以反悔</span><span>可以停下</span><span>可以重新確認</span></div>
+      </aside>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="why">
+      <div class="section-inner">
+        <div class="section-kicker">Why it matters</div>
+        <h2>為什麼要在獸圈談這件事？</h2>
+        <p class="section-intro">不是因為獸圈必須被定義成什麼，也不是因為每個參與者都會發生性行為。理由其實更簡單：我們是一群有身體、有關係、有界線，也可能有慾望與風險的真實的人。</p>
+        <div class="statement">
+          <div class="statement-icon" aria-hidden="true">✓</div>
+          <p><strong>獸展是一個真實的人際社群場域。</strong>只要社群裡存在交友、親密互動與性行為，就有提供同意、性健康及去污名資訊的價值。承認這些經驗存在，不等於把所有人貼上同一個標籤，而是讓有需要的人拿得到資訊。</p>
+        </div>
+        <div class="why-grid">
+          <article class="why-card"><div class="num">01</div><h3>人會在線下相遇</h3><p>原本在線上認識、遠距離或久未見面的朋友，會在獸展、聚會與住宿空間真正碰面。</p></article>
+          <article class="why-card"><div class="num">02</div><h3>互動可能改變</h3><p>聊天、喝酒、擁抱與親密互動可能自然發展，但每一步都需要新的確認，不是一路自動解鎖。</p></article>
+          <article class="why-card"><div class="num">03</div><h3>沉默不會降低風險</h3><p>不談性愛，不會讓壓力、感染或誤解消失；只會讓人更難在需要時開口、求助或停下。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section" id="consent">
+      <div class="section-inner">
+        <div class="section-kicker" style="color:var(--lime)">Only yes is yes</div>
+        <h2>同意不是一次性通行證</h2>
+        <p class="section-intro">同意不是「對方沒有說不」，也不是進房、脫衣或答應某個角色後，就自動涵蓋接下來所有事。它需要能被理解、被選擇，也能被改變。</p>
+        <div class="consent-grid">
+          <article class="consent-principle"><div class="letter">自</div><h3>自由</h3><p>不是因為怕對方失望、被排擠、欠人情或受到威脅才答應。</p></article>
+          <article class="consent-principle"><div class="letter">知</div><h3>知情</h3><p>知道要做什麼、可能的風險與防護方式，沒有被刻意隱瞞重要資訊。</p></article>
+          <article class="consent-principle"><div class="letter">具</div><h3>具體</h3><p>答應接吻不等於答應口交；答應當 0，也不等於答應所有方式與程度。</p></article>
+          <article class="consent-principle"><div class="letter">續</div><h3>持續</h3><p>互動進行中仍要留意與確認。身體反應、沉默或沒有推開，都不能代替願意。</p></article>
+          <article class="consent-principle"><div class="letter">撤</div><h3>可撤回</h3><p>任何時候都可以改變心意，不需要提出一份足以說服所有人的理由。</p></article>
+        </div>
+        <div class="callout"><strong>停住、僵住、閃避、突然沉默</strong>，都值得先停下來問。真正的確認不是逼對方說出「不要」，而是讓對方有空間自在地說「要」或「不要」。</div>
+      </div>
+    </section>
+
+    <section id="specific">
+      <div class="section-inner">
+        <div class="section-kicker">Say it clearly</div>
+        <h2>把話說清楚，反而更自在</h2>
+        <p class="section-intro">清楚不是掃興。當彼此都不必猜測，親密互動才不會變成一場讀心術期末考。</p>
+        <div class="scenario-grid">
+          <article class="scenario"><span class="label">進入房間</span><h3>「願意進房」不等於「願意做愛」</h3><p class="not">錯誤捷徑：他都跟我進來了，應該就是要做。</p><p class="better"><strong>可以這樣問：</strong>「你現在想要做到哪裡？只聊天、抱抱，還是有其他想法？」</p></article>
+          <article class="scenario"><span class="label">1／0／Side</span><h3>角色是偏好，不是服務契約</h3><p class="not">錯誤捷徑：你剛剛說當 1，現在就不能停。</p><p class="better"><strong>可以這樣說：</strong>「我現在狀態變了，想換方式或先停一下。」</p></article>
+          <article class="scenario"><span class="label">中途改變</span><h3>原本願意，也可以後來不願意</h3><p class="not">錯誤捷徑：都已經開始了，現在停很奇怪。</p><p class="better"><strong>可以這樣回應：</strong>「好，我們停。你想休息、換別的，還是今天就到這裡？」</p></article>
+          <article class="scenario"><span class="label">酒精與其他物質</span><h3>越難判斷，越不能靠猜</h3><p class="not">錯誤捷徑：他看起來很嗨，應該沒問題。</p><p class="better"><strong>更安全的原則：</strong>當對方無法清楚理解、表達或維持決定時，不進行性行為。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="health" style="background:#f2f5f7">
+      <div class="section-inner">
+        <div class="section-kicker">Combination prevention</div>
+        <h2>性健康不是只有「戴或不戴」</h2>
+        <p class="section-intro">保險套仍然重要，但真實世界需要的是組合防護。不同工具負責不同風險，沒有任何一項是全包式無敵星星。</p>
+        <div class="tools-grid">
+          <article class="tool-card"><div class="abbr">套＋潤滑</div><h3>保險套與相容潤滑液</h3><p>能降低 HIV 與多種性傳染病風險，也可減少摩擦與黏膜受傷。</p><p class="fine">乳膠保險套避免搭配油性潤滑品；使用前確認尺寸、效期與包裝完整。</p></article>
+          <article class="tool-card"><div class="abbr">PrEP</div><h3>HIV 暴露前預防</h3><p>在可能接觸 HIV 前使用的預防藥物，需要先檢驗並由醫師評估、追蹤。</p><p class="fine">PrEP 預防的是 HIV，不會預防梅毒、淋病、披衣菌或其他感染。</p></article>
+          <article class="tool-card"><div class="abbr">PEP</div><h3>HIV 暴露後緊急處置</h3><p>可能暴露 HIV 後，應盡快至提供 PEP 的醫療院所接受風險評估。</p><p class="fine">疾管署建議 72 小時內開始，24 小時內最佳，並依醫囑持續 28 天。</p></article>
+          <article class="tool-card"><div class="abbr">Doxy-PEP</div><h3>部分細菌性 STI 的暴露後預防</h3><p>是處方抗生素策略，不是自行囤藥、每次性交後隨意服用。</p><p class="fine">適用性、交互作用與抗藥性需要醫師共同評估；它不預防 HIV 或病毒性 STI。</p></article>
+          <article class="tool-card"><div class="abbr">疫苗</div><h3>先把能預防的風險擋下來</h3><p>可向醫療人員確認 HPV、A／B 型肝炎及 mpox 等疫苗是否適合自己。</p><p class="fine">接種條件、費用與公費資格可能改變，請以當下官方公告與醫療評估為準。</p></article>
+          <article class="tool-card"><div class="abbr">篩檢</div><h3>採檢部位要跟行為對得上</h3><p>喉嚨、肛門、尿液／尿道與血液可能檢查不同感染；沒有症狀也可能感染。</p><p class="fine">就醫時如實告知發生過哪些行為與接觸部位，能幫助醫療人員安排合適採檢。</p></article>
+        </div>
+        <div class="urgent">
+          <div class="clock" aria-hidden="true">⏱</div>
+          <div><h3>剛發生可能的 HIV 暴露？不要等症狀。</h3><p>無套性交、保險套破損或其他血液／體液暴露後，立刻尋求 PEP 評估。越早開始越好。</p></div>
+          <a class="button primary" href="https://www.cdc.gov.tw/Category/MPage/uo89XT3izngK6IY0wv8BNg" target="_blank" rel="noopener">找 PEP 急門診 ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="pressure">
+      <div class="section-inner">
+        <div class="section-kicker">No performance contract</div>
+        <h2>角色不是契約，高潮不是 KPI</h2>
+        <p class="section-intro">性愛中的勃起、持久、射精與角色表現，很容易被誤讀成喜歡程度或能力證明。但身體不是按下按鈕就照表操課的機器。</p>
+        <div class="pressure-grid">
+          <article class="pressure-card"><h3>勃起不是同意</h3><p>身體可能在心理不願意時出現反應，也可能在非常想要時因疲累、焦慮、藥物或酒精而沒有勃起。</p></article>
+          <article class="pressure-card"><h3>高潮不是債務</h3><p>對方射了，不代表你欠他一次高潮、口交、被插或任何交換。沒有高潮，也不代表這次互動沒有價值。</p></article>
+          <article class="pressure-card"><h3>Side 不是次等選項</h3><p>不做肛交、臨時改變角色或只想做部分互動，都是完整而有效的選擇，不需要被升級或修正。</p></article>
+        </div>
+        <h3 style="margin-top:2.2rem">失望可以表達，但不要把失望變成壓力</h3>
+        <div class="swap">
+          <div class="bubble">「我都射了，你怎麼還沒射？你是不是不喜歡我？」</div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="bubble good">「我有點不確定你現在的感受。你還舒服嗎？想繼續、換方式，還是休息？」</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="after" style="background:#f2f5f7">
+      <div class="section-inner">
+        <div class="section-kicker">What now?</div>
+        <h2>事情已經發生了，現在怎麼辦？</h2>
+        <p class="section-intro">焦慮很容易把腦袋塞滿最壞劇本。先別審判自己或對方，把下一步拆小，通常比反覆猜測更有用。</p>
+        <div class="steps">
+          <article class="step"><div><h3>先停止並照顧當下</h3><p>感到疼痛、不舒服、恐慌或改變心意時，先停下。必要時離開現場、找可信任的朋友陪伴或就醫。</p></div></article>
+          <article class="step"><div><h3>判斷是否需要緊急 PEP</h3><p>若可能暴露 HIV，不要等檢驗或症狀才行動。72 小時是上限，不是建議你等到最後一刻。</p></div></article>
+          <article class="step"><div><h3>安排合適的檢驗與門診</h3><p>告訴醫療人員行為時間、方式、部位與防護情況。不同感染有不同空窗期，可能需要依建議複檢。</p></div></article>
+          <article class="step"><div><h3>用資訊通知，而不是用指控審判</h3><p>可以說：「我最近檢驗出某項感染，建議你也去檢查。」不必在尚未能確認時推斷誰傳給誰，也不要公開他人身分。</p></div></article>
+          <article class="step"><div><h3>確診就接受治療與支持</h3><p>多數性傳染病可以治療或控制。HIV 感染者穩定治療並維持病毒量測不到時，性行為不會傳染 HIV，也就是 U=U。</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stigma">
+      <div class="section-inner">
+        <div class="stigma-banner">
+          <div class="section-kicker" style="color:#211300">No shame, real responsibility</div>
+          <h2>感染不是人格判決，篩檢也不是認罪書</h2>
+          <p>負責任，是願意篩檢、接受治療、遵從醫療建議、在需要時通知可能受影響的人。羞辱、公開獵巫與把感染者當成骯髒的人，並不會讓社群更安全，只會讓更多人害怕篩檢、告知與求助。</p>
+          <div class="stigma-points"><div>願意告知，需要勇氣與安全感。</div><div>不知道感染來源時，不要自行拼湊犯人。</div><div>支持治療與 U=U，比流言更能中斷傳播。</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources" style="background:#eef2f5">
+      <div class="section-inner">
+        <div class="section-kicker">Taiwan resources</div>
+        <h2>在台灣，可以從這裡開始</h2>
+        <p class="section-intro">以下連結以疾管署與正式服務入口為主。服務名單與時間可能調整，出發前先查看最新公告或電話確認。</p>
+        <div class="resources-grid">
+          <a class="resource-card" href="https://www.cdc.gov.tw/Category/MPage/uo89XT3izngK6IY0wv8BNg" target="_blank" rel="noopener"><div class="resource-top"><h3>PEP 急門診與處理原則</h3><span class="go">↗</span></div><p>可能暴露 HIV 後，查詢提供非職業 PEP 的醫院與急門診服務時間。</p><span class="source">疾管署</span></a>
+          <a class="resource-card" href="https://www.cdc.gov.tw/Category/MPage/tXBKgpeVZ9l9929TEdZGJw" target="_blank" rel="noopener"><div class="resource-top"><h3>PrEP 資訊與服務醫院</h3><span class="go">↗</span></div><p>了解 PrEP、政府補助與自費服務機構，並取得專業評估。</p><span class="source">疾管署</span></a>
+          <a class="resource-card" href="https://www.cdc.gov.tw/Category/MPage/gH7NyWhq3ulASakaq5DDIQ" target="_blank" rel="noopener"><div class="resource-top"><h3>匿名諮詢與篩檢</h3><span class="go">↗</span></div><p>查詢免費匿名篩檢點，以及電話、LINE 等一對一匿名諮詢方式。</p><span class="source">疾管署</span></a>
+          <a class="resource-card" href="https://hiva.cdc.gov.tw/Selftest" target="_blank" rel="noopener"><div class="resource-top"><h3>HIV 自我篩檢</h3><span class="go">↗</span></div><p>取得自我篩檢服務資訊。初步陽性仍需要進一步確認檢驗與轉介。</p><span class="source">疾管署愛滋自我篩檢網站</span></a>
+          <a class="resource-card" href="https://www.cdc.gov.tw/Category/MPage/IkGMkgwLoqNZ76_pSla7hg" target="_blank" rel="noopener"><div class="resource-top"><h3>性健康友善門診</h3><span class="go">↗</span></div><p>尋找性傳染病、泌尿、感染與相關友善醫療資源。</p><span class="source">疾管署</span></a>
+          <a class="resource-card" href="https://hotline.org.tw/" target="_blank" rel="noopener"><div class="resource-top"><h3>同志社群支持與諮詢</h3><span class="go">↗</span></div><p>需要同志身分、情感、關係或社群支持時，可查看現行服務方式。</p><span class="source">台灣同志諮詢熱線協會</span></a>
+        </div>
+        <div class="phone-card"><div><h3>不知道該找哪裡？</h3><p>可向疾管署防疫專線詢問最新醫療與防疫資源。</p></div><a href="tel:1922">1922</a></div>
+      </div>
+    </section>
+
+    <section id="future">
+      <div class="section-inner">
+        <div class="future">
+          <div><div class="section-kicker">A possible next step</div><h2>這個網頁不是終點</h2><p>未來若有合適機會，我們也希望邀請性健康、公衛、醫療或相關領域的專業工作者，在獸展或社群場合進一步分享與交流，讓這些資訊被更完整地理解與使用。</p></div>
+          <svg class="antler-mark" viewBox="0 0 180 140" fill="none" aria-hidden="true"><path d="M88 130V66M88 81L54 50M54 50L26 57M54 50L49 22M49 35L27 22M92 81L126 50M126 50L154 57M126 50L131 22M131 35L153 22" stroke="#082b52" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><circle cx="90" cy="125" r="11" fill="#f27718"/></svg>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h3>Only Yes Is Yes</h3>
+        <p>這不是一個教大家如何約炮的網站，也不是一個要求大家不要做愛的網站。它承認性愛真實存在，並希望大家更安全、更自在，也更尊重彼此。</p>
+        <p>由台灣獸圈成員自主發起與整理。內容以男男性行為情境為主要案例，所有性別與性傾向皆可閱讀。</p>
+        <p><strong>醫療提醒：</strong>本頁提供一般性健康資訊，不能取代個別診斷、處方與專業評估。</p>
+        <span class="update">內容查核：2026 年 7 月 14 日</span>
+      </div>
+      <div>
+        <h3>主要資料來源</h3>
+        <ul class="source-list">
+          <li><a href="https://www.cdc.gov.tw/Category/MPage/tXBKgpeVZ9l9929TEdZGJw" target="_blank" rel="noopener">疾管署：PrEP</a></li>
+          <li><a href="https://www.cdc.gov.tw/Category/MPage/uo89XT3izngK6IY0wv8BNg" target="_blank" rel="noopener">疾管署：PEP</a></li>
+          <li><a href="https://www.cdc.gov.tw/Category/MPage/gH7NyWhq3ulASakaq5DDIQ" target="_blank" rel="noopener">疾管署：匿名諮詢與篩檢</a></li>
+          <li><a href="https://www.cdc.gov.tw/Category/MPage/IkGMkgwLoqNZ76_pSla7hg" target="_blank" rel="noopener">疾管署：性健康友善門診</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <button class="back-top" type="button" aria-label="回到頁首">↑</button>
+  <script>
+    const navLinks = [...document.querySelectorAll('.nav-links a')];
+    const observed = navLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`));
+        }
+      });
+    }, {rootMargin:'-25% 0px -65% 0px'});
+    observed.forEach(section => observer.observe(section));
+    const topButton = document.querySelector('.back-top');
+    window.addEventListener('scroll', () => topButton.classList.toggle('show', window.scrollY > 900), {passive:true});
+    topButton.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+  </script>
+</body>
+</html>
